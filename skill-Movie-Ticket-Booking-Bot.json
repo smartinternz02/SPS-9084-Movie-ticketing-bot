@@ -1,0 +1,875 @@
+{
+  "intents": [
+    {
+      "intent": "book_tickets",
+      "examples": [
+        {
+          "text": "book movie tickets"
+        },
+        {
+          "text": "I would like to go to the movies"
+        },
+        {
+          "text": "make movie reservations"
+        },
+        {
+          "text": "Pls book tickets to a movie"
+        },
+        {
+          "text": "reserve some seats for a movie"
+        },
+        {
+          "text": "Spider-Man: Homecoming"
+        }
+      ],
+      "description": "Ask the bot to book a tickets to a movie"
+    },
+    {
+      "intent": "greeting",
+      "examples": [
+        {
+          "text": "Good Evening"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "What's up?"
+        }
+      ],
+      "description": "Different ways to greet the bot"
+    },
+    {
+      "intent": "thankyou",
+      "examples": [
+        {
+          "text": "Great, thanks"
+        },
+        {
+          "text": "Thanks!"
+        },
+        {
+          "text": "Thanks a lot"
+        },
+        {
+          "text": "thanks you so much"
+        },
+        {
+          "text": "Thank you"
+        }
+      ],
+      "description": "Thank the bot for accomplishing the task"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Cinema",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Novo Cinemas",
+          "synonyms": [
+            "Cinema",
+            "Cinema in festival city",
+            "FestivalCity cinema"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ujjain Cinema",
+          "synonyms": [
+            "C21",
+            "C21 Theater",
+            "PVR",
+            "PVR Cinema"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ujjain City Talkies",
+          "synonyms": [
+            "Metro",
+            "Metro Talkies",
+            "Rishte Cineplex",
+            "Risthe"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ujjain Mall Reel Cinemas",
+          "synonyms": [
+            "Reel Cinemas in Ujjain Mall",
+            "Ujjain mall",
+            "Ujjain mall cinema"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "Greetings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Good Afternoon",
+          "synonyms": [
+            "GA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Evening",
+          "synonyms": [
+            "GE"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Morning",
+          "synonyms": [
+            "GM"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Hello",
+          "synonyms": [
+            "hey",
+            "Hi",
+            "Hii",
+            "whats ap"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "movie",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "movie",
+          "synonyms": [
+            "cinema",
+            "film",
+            "movies",
+            "picture"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "Movie-Date",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Date of the movie",
+          "synonyms": [
+            "DD/MM/YYYY"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "please select the movie date",
+          "synonyms": [
+            "date of movie ",
+            "movie date"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "movie-name",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Blockbuster movies",
+          "synonyms": [
+            "Avengers",
+            "Bahubali",
+            "KGF"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Bollywood",
+          "synonyms": [
+            "3 Idiot",
+            "A Gentleman",
+            "Burning Treain",
+            "Lootcase",
+            "Sholay"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Hollywood",
+          "synonyms": [
+            "Broken City ",
+            "Darknight",
+            "Fast and Furious",
+            "Hancock"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Iron Man",
+          "synonyms": [
+            "Iron Man 1",
+            "Iron Man 2",
+            "Iron Man 3"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "South Movies",
+          "synonyms": [
+            "A Time Story",
+            "Intelligant",
+            "Jeene nhi duga ",
+            "Kanchana "
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "Payments",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Card",
+          "synonyms": [
+            "Credit Card",
+            "Debit Card"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Payment type",
+          "synonyms": [
+            "Cash",
+            "Google pay ",
+            "Online netbanking",
+            "Phone pay "
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Prices",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Movie Cost",
+          "synonyms": [
+            "110 Rs",
+            "200 Rs",
+            "500 Rs"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Movie Price",
+          "synonyms": [
+            "1000 Rs",
+            "120 Rs",
+            "150 Rs",
+            "190 Rs",
+            "300 Rs",
+            "500 Rs"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Seat",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Seat number",
+          "synonyms": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
+      "entity": "Timing",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Show Time",
+          "synonyms": [
+            "01:00PM",
+            "03:00PM",
+            "05:00PM",
+            "11:00AM"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://www.fast2sms.com/dev/bulkV2",
+      "name": "main_webhook",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "vbfAI8g5PnVuHZMcYlm9Bzd42SyDha7wsjXkq6LEW1xCeQ0Ni38OksMi4mDV1EGuBFJPQHvz2X9KW7aL"
+        }
+      ]
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1522765181798",
+      "context": {
+        "moviedate": "@sys-date"
+      },
+      "metadata": {},
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_11_1522765181798"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Please enter preferred date of booking"
+      },
+      "parent": "slot_10_1522765181798",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_12_1522765181798",
+      "previous_sibling": "handler_11_1522765181798"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_13_1522765211766",
+      "context": {
+        "seats": "@sys-number"
+      },
+      "metadata": {},
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_14_1522765211766"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "For how many people should I book?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_13_1522765211766",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_15_1522765211766",
+      "previous_sibling": "handler_14_1522765211766"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_16_1522765353728",
+      "context": {
+        "movietime": "@sys-time"
+      },
+      "metadata": {},
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_17_1522765353729"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Please enter preferred time of booking"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_16_1522765353728",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_18_1522765353729",
+      "previous_sibling": "handler_17_1522765353729"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Please inter contact number"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1615891341032",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1615891341034",
+      "previous_sibling": "handler_7_1615891341034"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_4_1522764649788",
+      "event_name": "nomatch",
+      "dialog_node": "handler_26_1522765982727",
+      "previous_sibling": "handler_44_1522769594673"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "There are only 2 movies available (Spider-Man: Homecoming and Star Wars:The Last Jedi). Please enter the name you would like to watch"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_4_1522764649788",
+      "event_name": "nomatch",
+      "dialog_node": "handler_44_1522769594673",
+      "previous_sibling": "handler_5_1522764649788"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1522764649788",
+      "context": {
+        "moviename": "@movie-name"
+      },
+      "metadata": {},
+      "conditions": "@movie-name",
+      "event_name": "input",
+      "dialog_node": "handler_5_1522764649788",
+      "previous_sibling": "handler_6_1522764649788"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "There are  many movies available(KGF,Bahubali,Sholay) "
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_4_1522764649788",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_6_1522764649788"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1615891341032",
+      "context": {
+        "number_2": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_7_1615891341034"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1522765083038",
+      "context": {
+        "movielocation": "@Cinema"
+      },
+      "metadata": {},
+      "conditions": "@Cinema",
+      "event_name": "input",
+      "dialog_node": "handler_8_1522765083038"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Please enter the location in Ujjain(PVR Cinema,Metro Talkies,Narendra Talkies, C21 Theater)"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_7_1522765083038",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_9_1522765083038",
+      "previous_sibling": "handler_8_1522765083038"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#greeting || @Greetings",
+      "dialog_node": "node_1_1522764255726",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Thank You",
+      "output": {
+        "text": {
+          "values": [
+            "You are welcome",
+            "My pleasure!",
+            "Welcome!",
+            "Visit again"
+          ],
+          "selection_policy": "random"
+        }
+      },
+      "metadata": {},
+      "conditions": "#thankyou",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_19_1522765467834",
+      "previous_sibling": "node_1_1522764255726"
+    },
+    {
+      "type": "frame",
+      "title": "Movie Booking Details",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you. Your request for booking seats for the $moviename movie on $moviedate at $movietime for $seats people at $movielocation has been completed. Tickets will be send to you soon."
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "Movie ticket will be collect to the ticket counter."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#book_tickets",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1522764528466",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_19_1522765467834",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {},
+          "result_variable": "webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_47_1522770341115",
+      "previous_sibling": "node_3_1522764528466"
+    },
+    {
+      "type": "standard",
+      "title": "Message",
+      "parent": "node_3_1522764528466",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "route": "q",
+            "message": "Thank you your ticket of $seat $number is booked please pay your booking with $payments.The invoice is send to $number_2\"",
+            "numbers": "$number_2",
+            "language": "english",
+            "sender_id": "FSTSMS"
+          },
+          "result_variable": "webhook_result_2"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "dialog_node": "node_7_1615882070971"
+    },
+    {
+      "type": "standard",
+      "title": "Delete context variable",
+      "parent": "node_3_1522764528466",
+      "conditions": "true",
+      "dialog_node": "node_8_1615893112671",
+      "previous_sibling": "node_7_1615882070971"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Afternoon, How can I help you? I can help you book movie tickets"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1522764255726",
+      "conditions": "@Greetings:(Good Afternoon)",
+      "dialog_node": "response_3_1615890734835",
+      "previous_sibling": "response_7_1615890665349"
+    },
+    {
+      "type": "response_condition",
+      "parent": "node_7_1615882070971",
+      "conditions": "anything_else",
+      "dialog_node": "response_4_1615882125605",
+      "previous_sibling": "response_9_1615882122899"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "I didn't understand. You can try rephrasing.",
+            "Can you reword your statement? I'm not understanding.",
+            "I didn't get your meaning."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_47_1522770341115",
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_6_1615881858057"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Evening, How can I help you? I can help you book movie tickets"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1522764255726",
+      "conditions": "@Greetings:(Good Evening)",
+      "dialog_node": "response_7_1615890665349",
+      "previous_sibling": "response_9_1615890562555"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello, How can I help you? I can help you book movie tickets"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1522764255726",
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1615890787696",
+      "previous_sibling": "response_3_1615890734835"
+    },
+    {
+      "type": "response_condition",
+      "parent": "node_47_1522770341115",
+      "conditions": "anything_else",
+      "dialog_node": "response_8_1615881860381",
+      "previous_sibling": "response_6_1615881858057"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1615882070971",
+      "conditions": "$webhook_result_2",
+      "dialog_node": "response_9_1615882122899"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Good Morning , How can I help you? I can help you book movie tickets",
+            "I am book movie ticket bot.How can i help you?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1522764255726",
+      "conditions": "@Greetings:(Good Morning)",
+      "dialog_node": "response_9_1615890562555"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1522764528466",
+      "metadata": {},
+      "variable": "$moviedate",
+      "dialog_node": "slot_10_1522765181798",
+      "previous_sibling": "slot_4_1522764649788"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1522764528466",
+      "metadata": {},
+      "variable": "$seats",
+      "dialog_node": "slot_13_1522765211766",
+      "previous_sibling": "slot_16_1522765353728"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1522764528466",
+      "metadata": {},
+      "variable": "$movietime",
+      "dialog_node": "slot_16_1522765353728",
+      "previous_sibling": "slot_10_1522765181798"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1522764528466",
+      "metadata": {},
+      "variable": "$moviename",
+      "dialog_node": "slot_4_1522764649788",
+      "previous_sibling": "slot_7_1522765083038"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1522764528466",
+      "metadata": {},
+      "variable": "$movielocation",
+      "dialog_node": "slot_7_1522765083038",
+      "previous_sibling": "node_8_1615893112671"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1522764528466",
+      "variable": "$number_2",
+      "dialog_node": "slot_8_1615891341032",
+      "previous_sibling": "slot_13_1522765211766"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello, How can I help you? I can help you book movie tickets"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "learning_opt_out": false,
+  "name": "Movie Ticket Booking Bot",
+  "language": "en",
+  "description": ""
+}

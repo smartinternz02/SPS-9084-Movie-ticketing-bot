@@ -1,0 +1,170 @@
+[
+    {
+        "id": "f401053d.e803e8",
+        "type": "tab",
+        "label": "Movie ticket chatbot",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8faff55c.c7c748",
+        "type": "ui_form",
+        "z": "f401053d.e803e8",
+        "name": "",
+        "label": "",
+        "group": "e0dd3b2d.7bce48",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Enter the inputs ",
+                "value": "text",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "text": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "7a5a49e2.d45468"
+            ]
+        ]
+    },
+    {
+        "id": "7a5a49e2.d45468",
+        "type": "function",
+        "z": "f401053d.e803e8",
+        "name": "",
+        "func": "msg.payload=msg.payload.text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "2d3ce29.29e201e",
+                "a9d52e72.69a15"
+            ]
+        ]
+    },
+    {
+        "id": "6c9fd65e.c26c58",
+        "type": "function",
+        "z": "f401053d.e803e8",
+        "name": "",
+        "func": "msg.payload=msg.payload.output.text[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "232e9f89.172eb"
+            ]
+        ]
+    },
+    {
+        "id": "2d3ce29.29e201e",
+        "type": "watson-conversation-v1",
+        "z": "f401053d.e803e8",
+        "name": "",
+        "workspaceid": "c2d93eba-38da-4df5-8c68-701fc39d05cb",
+        "multiuser": false,
+        "context": true,
+        "empty-payload": false,
+        "service-endpoint": "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/73b3876f-a83d-4d5a-839b-39fcbd147418",
+        "timeout": "",
+        "optout-learning": false,
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "db538324.431c7",
+                "6c9fd65e.c26c58"
+            ]
+        ]
+    },
+    {
+        "id": "db538324.431c7",
+        "type": "debug",
+        "z": "f401053d.e803e8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a9d52e72.69a15",
+        "type": "ui_text",
+        "z": "f401053d.e803e8",
+        "group": "e0dd3b2d.7bce48",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "You",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 370,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "232e9f89.172eb",
+        "type": "ui_text",
+        "z": "f401053d.e803e8",
+        "group": "e0dd3b2d.7bce48",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Bot",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 710,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e0dd3b2d.7bce48",
+        "type": "ui_group",
+        "name": "CHATBOT",
+        "tab": "fe624480.4a3a88",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "fe624480.4a3a88",
+        "type": "ui_tab",
+        "name": "MOVIE TICKET",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
